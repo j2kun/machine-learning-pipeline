@@ -9,6 +9,7 @@ class User(models.Model):
     country = models.CharField(max_length=2, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
+    labeled_as_real = models.BooleanField(null=True)
 
 class UserLoginEvent(models.Model):
     created = models.DateTimeField(default=timezone.now)
