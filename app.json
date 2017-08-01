@@ -1,0 +1,38 @@
+{
+  "name": "Machine Learning Pipeline Tutorial",
+  "description": "A simple machine learning pipeline tutorial using scikit-learn",
+  "keywords": [
+    "django",
+    "scikit-learn",
+    "machine learning",
+    "data pipeline"
+  ],
+  "website": "https://jeremykun.com",
+  "repository": "https://github.com/j2kun/machine-learning-pipeline",
+  "scripts": {
+    "postdeploy": "python manage.py migrate"
+  },
+  "env": {
+    "DISABLE_COLLECTSTATIC": {
+      "description": "Disable static asset collection",
+      "value": "1"
+    },
+    "DEBUG": {
+      "description": "Whether to run the app in DEBUG mode",
+      "value": "False"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
